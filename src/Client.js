@@ -3,6 +3,8 @@ function search(query, cb) {
   console.log('1');
   return fetch(`/swapi/people/${query}`, {
     accept: 'application/json',
+    cache: "no-cache",
+    referrerPolicy: "no-referrer"
   }).then(checkStatus)
     .then(parseJSON)
     .then(cb);
