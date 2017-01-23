@@ -15,7 +15,7 @@ function checkStatus(response) {
   console.log('2');
   if (response.status >= 200 && response.status < 300) {
     console.log('4');
-    console.log(response);
+    // console.log(response);
     return response;
   } else {
     console.log('3');
@@ -28,6 +28,9 @@ function checkStatus(response) {
 }
 
 function parseJSON(response) {
+  console.log('5');
+  console.log(response);
+
   return response.json();
 }
 
