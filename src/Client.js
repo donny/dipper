@@ -4,7 +4,8 @@ function search(query, cb) {
   return fetch(`/swapi/people/${query}`, {
     accept: 'application/json',
     cache: "no-cache",
-    referrerPolicy: "no-referrer"
+    referrerPolicy: "no-referrer",
+    origin: "http://fiftytwo-dipper.netlify.com"
   }).then(checkStatus)
     .then(parseJSON)
     .then(cb);
