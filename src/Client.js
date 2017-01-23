@@ -29,7 +29,7 @@ function checkStatus(response) {
 
 function parseJSON(response) {
   console.log('5');
-  console.log(response);
+  console.log(response.json());
 
   return response.json();
 }
