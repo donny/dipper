@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import './Gallery.css';
 import Masonry from 'react-masonry-component'
+import NewTrivia from './NewTrivia'
 import Film from './Film'
 import Person from './Person'
 import Species from './Species'
 
 class Gallery extends Component {
-  handleClick() {
-    console.log("CLICK");
-  }
-
   render() {
     return (
       <div className="Gallery">
-        <Masonry onClick={this.handleClick}>
+        <NewTrivia/>
+        <Masonry>
           <Film resId="1"/>
           <Person resId="1"/>
           <Film resId="2"/>
