@@ -5,11 +5,16 @@ class NewTrivia extends Component {
   constructor(props) {
     super(props);
     this.newRandomTrivia = this.newRandomTrivia.bind(this);
-    this.state = { resId: props.resId, fetching: true, data: {} };
+    this.addNewTrivia = this.addNewTrivia.bind(this);
   }
 
   newRandomTrivia() {
     console.log("New Random Trivia");
+    this.addNewTrivia("Person-2");
+  }
+
+  addNewTrivia(trivia) {
+    this.props.addNewTrivia(trivia);
   }
 
   render() {

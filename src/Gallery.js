@@ -7,28 +7,42 @@ import Person from './Person'
 import Species from './Species'
 
 class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { trivias: ["Film-1-1", "Person-1-2", "Species-1-3"] };
+    this.addNewTrivia = this.addNewTrivia.bind(this);
+  }
+
+  addNewTrivia(trivia) {
+    // Need to calculate a unique key since we might have the same trivias twice (random).
+    const key = new Date().getTime();
+    this.setState({ trivias: [...this.state.trivias, trivia + '-' + key] });
+  }
+
+  renderTrivia(trivia) {
+    const type = trivia.split('-')[0];
+    const resId = trivia.split('-')[1];
+    const key = trivia.split('-')[2];
+
+    if (type.includes('Film')) {
+      return (<Film key={key} resId={resId}/>)
+    } else if (type.includes('Person')) {
+      return (<Person key={key} resId={resId}/>)
+    } else if (type.includes('Species')) {
+      return (<Species key={key} resId={resId}/>)
+    }
+  }
+
+  renderTrivias() {
+    return this.state.trivias.map(trivia => this.renderTrivia(trivia));
+  }
+
   render() {
     return (
       <div className="Gallery">
-        <NewTrivia/>
+        <NewTrivia addNewTrivia={this.addNewTrivia}/>
         <Masonry>
-          <Film resId="1"/>
-          <Person resId="1"/>
-          <Film resId="2"/>
-          <Species resId="1"/>
-          <Film resId="3"/>
-          <Person resId="2"/>
-          <Species resId="2"/>
-          <Species resId="3"/>
-          <Person resId="3"/>
-          <Film resId="4"/>
-
-
-          <Species resId="4"/>
-
-          <Person resId="4"/>
-
-
+          {this.renderTrivias()}
         </Masonry>
       </div>
     );
