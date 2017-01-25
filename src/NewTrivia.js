@@ -36,10 +36,9 @@ class NewTrivia extends Component {
   render() {
     return (
       <div className="NewTrivia">
-        <button onClick={this.newRandomTrivia}>New Random Trivia</button>
+        <button className="Button" onClick={this.newRandomTrivia}>New Random Trivia</button>
       </div>
     )
-
   }
 }
 

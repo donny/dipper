@@ -1,7 +1,18 @@
 .NewTrivia {
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid #00FFD8;
-  background: #DDFFEE;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  background: #222;
   text-align: center;
+}
+
+.NewTrivia .Button {
+  background-color: #ffffff;
+  border: none;
+  color: #222;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
 }
