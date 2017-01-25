@@ -4,13 +4,33 @@
   border-radius: 5px;
   margin: 10px;
   width: 300px;
-  background-color: #00bfa5;
 }
 
 .Person:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.Person .Content {
+.Person .Content-loading {
+  text-align: center;
+}
+
+.Person .Content-type {
+  width: 268px;
+  padding: 2px 10px;
+  color: #00bfa5;
+}
+
+.Person .Content-title {
+  background-color: #00bfa5;
+  color: #ffffff;
+  width: 268px;
   padding: 2px 16px;
+}
+
+.Person ul {
+  list-style: none;
+}
+
+.Person ul li {
+  margin: 0px 0px 10px 0px;
 }

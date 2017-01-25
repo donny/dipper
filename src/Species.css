@@ -4,13 +4,33 @@
   border-radius: 5px;
   margin: 10px;
   width: 300px;
-  background-color: #dd2c00;
 }
 
 .Species:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.Species .Content {
+.Species .Content-loading {
+  text-align: center;
+}
+
+.Species .Content-type {
+  width: 268px;
+  padding: 2px 10px;
+  color: #dd2c00;
+}
+
+.Species .Content-title {
+  background-color: #dd2c00;
+  color: #ffffff;
+  width: 268px;
   padding: 2px 16px;
+}
+
+.Species ul {
+  list-style: none;
+}
+
+.Species ul li {
+  margin: 0px 0px 10px 0px;
 }

@@ -26,7 +26,7 @@ class Species extends Component {
     if (this.state.fetching) {
       return (
         <div className="Species">
-          <div className="Content">
+          <div className="Content-loading">
             <h2>Loading...</h2>
           </div>
         </div>
@@ -34,19 +34,22 @@ class Species extends Component {
     } else {
       return (
         <div className="Species" onClick={this.handleClick}>
-          <div className="Content">
-            <h2>{this.state.data.name}</h2>
-            <ul>
-              <li>Classification: {this.state.data.classification}</li>
-              <li>Designation: {this.state.data.designation}</li>
-              <li>Average Height: {this.state.data.average_height}</li>
-              <li>Skin Colors: {this.state.data.skin_colors}</li>
-              <li>Hair Colors: {this.state.data.hair_colors}</li>
-              <li>Eye Colors: {this.state.data.eye_colors}</li>
-              <li>Average Lifespan: {this.state.data.average_lifespan}</li>
-              <li>Language: {this.state.data.language}</li>
-            </ul>
+          <div className="Content-type">
+            <small>Category: Species</small>
           </div>
+          <div className="Content-title">
+            <h2>{this.state.data.name}</h2>
+          </div>
+          <ul>
+            <li><strong>Classification</strong>: {this.state.data.classification}</li>
+            <li><strong>Designation</strong>: {this.state.data.designation}</li>
+            <li><strong>Average Height</strong>: {this.state.data.average_height}</li>
+            <li><strong>Skin Colors</strong>: {this.state.data.skin_colors}</li>
+            <li><strong>Hair Colors</strong>: {this.state.data.hair_colors}</li>
+            <li><strong>Eye Colors</strong>: {this.state.data.eye_colors}</li>
+            <li><strong>Average Lifespan</strong>: {this.state.data.average_lifespan}</li>
+            <li><strong>Language</strong>: {this.state.data.language}</li>
+          </ul>
         </div>
       );
     }
