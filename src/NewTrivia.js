@@ -8,8 +8,8 @@ class NewTrivia extends Component {
     this.addNewTrivia = this.addNewTrivia.bind(this);
     this.getRandomIntInclusive = this.getRandomIntInclusive.bind(this);
     this.state = {
-      types: ['Film', 'Person', 'Species'],
-      counts: {Film: 7, Person: 87, Species: 37}
+      types: ['Film', 'Person', 'Species', 'Planet', 'Starship', 'Vehicle'],
+      counts: {Film: 7, Person: 87, Species: 37, Planet: 61, Starship:37, Vehicle:39}
     };
   }
 

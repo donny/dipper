@@ -5,11 +5,14 @@ import NewTrivia from './NewTrivia'
 import Film from './entities/Film'
 import Person from './entities/Person'
 import Species from './entities/Species'
+import Planet from './entities/Planet'
+import Starship from './entities/Starship'
+import Vehicle from './entities/Vehicle'
 
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { trivias: [] };
+    this.state = { trivias: ["Starship-9-1", "Vehicle-4-2", "Person-3-21", "Planet-1-88", "Species-1-9", "Film-3-11"] };
     this.addNewTrivia = this.addNewTrivia.bind(this);
   }
 
@@ -30,6 +33,12 @@ class Gallery extends Component {
       return (<Person key={key} resId={resId}/>)
     } else if (type.includes('Species')) {
       return (<Species key={key} resId={resId}/>)
+    } else if (type.includes('Planet')) {
+      return (<Planet key={key} resId={resId}/>)
+    } else if (type.includes('Starship')) {
+      return (<Starship key={key} resId={resId}/>)
+    } else if (type.includes('Vehicle')) {
+      return (<Vehicle key={key} resId={resId}/>)
     }
   }
 
