@@ -6,11 +6,27 @@ class NewTrivia extends Component {
     super(props);
     this.newRandomTrivia = this.newRandomTrivia.bind(this);
     this.addNewTrivia = this.addNewTrivia.bind(this);
+    this.getRandomIntInclusive = this.getRandomIntInclusive.bind(this);
+    this.state = {
+      types: ['Film', 'Person', 'Species'],
+      counts: {Film: 7, Person: 87, Species: 37}
+    };
+  }
+
+  getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   newRandomTrivia() {
-    console.log("New Random Trivia");
-    this.addNewTrivia("Person-2");
+    const counts = this.state.counts;
+    const types = this.state.types;
+
+    const randomType = this.getRandomIntInclusive(1, types.length) - 1;
+    const randomId = this.getRandomIntInclusive(1, counts[types[randomType]]);
+
+    this.addNewTrivia(types[randomType] + "-" + randomId);
   }
 
   addNewTrivia(trivia) {

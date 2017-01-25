@@ -9,7 +9,7 @@ import Species from './Species'
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { trivias: ["Film-1-1", "Person-1-2", "Species-1-3"] };
+    this.state = { trivias: [] };
     this.addNewTrivia = this.addNewTrivia.bind(this);
   }
 
