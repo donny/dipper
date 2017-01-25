@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Person.css';
-import Remote from './Remote';
+import Remote from '../Remote';
 
 class Person extends Component {
   constructor(props) {

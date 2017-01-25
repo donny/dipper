@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Film.css';
-import Remote from './Remote';
+import Remote from '../Remote';
 
 class Film extends Component {
   constructor(props) {

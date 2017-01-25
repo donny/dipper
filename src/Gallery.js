@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './Gallery.css';
 import Masonry from 'react-masonry-component'
 import NewTrivia from './NewTrivia'
-import Film from './Film'
-import Person from './Person'
-import Species from './Species'
+import Film from './entities/Film'
+import Person from './entities/Person'
+import Species from './entities/Species'
 
 class Gallery extends Component {
   constructor(props) {
