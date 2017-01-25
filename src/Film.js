@@ -26,7 +26,7 @@ class Film extends Component {
     if (this.state.fetching) {
       return (
         <div className="Film">
-          <div className="Content">
+          <div className="Content-loading">
             <h2>Loading...</h2>
           </div>
         </div>
@@ -34,14 +34,17 @@ class Film extends Component {
     } else {
       return (
         <div className="Film" onClick={this.handleClick}>
-          <div className="Content">
-            <h2>{this.state.data.title}</h2>
-            <ul>
-              <li>Release Date: {this.state.data.release_date}</li>
-              <li>Director: {this.state.data.director}</li>
-              <li>Producer: {this.state.data.producer}</li>
-            </ul>
+          <div className="Content-type">
+            <small>Category: Film</small>
           </div>
+          <div className="Content-title">
+            <h2>{this.state.data.title}</h2>
+          </div>
+          <ul>
+            <li><strong>Release Date:</strong> {this.state.data.release_date}</li>
+            <li><strong>Director:</strong> {this.state.data.director}</li>
+            <li><strong>Producer:</strong> {this.state.data.producer}</li>
+          </ul>
         </div>
       );
     }

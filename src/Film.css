@@ -4,13 +4,34 @@
   border-radius: 5px;
   margin: 10px;
   width: 300px;
-  background-color: #0091ea;
+  /*padding: 2px 16px;*/
 }
 
 .Film:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.Film .Content {
+.Film .Content-loading {
+  text-align: center;
+}
+
+.Film .Content-type {
+  width: 268px;
+  padding: 2px 10px;
+  color: #0091ea;
+}
+
+.Film .Content-title {
+  background-color: #0091ea;
+  color: #ffffff;
+  width: 268px;
   padding: 2px 16px;
+}
+
+.Film ul {
+  list-style: none;
+}
+
+.Film ul li {
+  margin: 0px 0px 10px 0px;
 }
