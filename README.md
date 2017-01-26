@@ -10,12 +10,16 @@ I have developed front-end apps using AngularJS and Ember. But I skipped the Rea
 
 ### Project
 
-[React](https://facebook.github.io/react/) is a JavaScript library for building user interfaces. There are many [tutorials](https://github.com/enaqx/awesome-react) on React, but it’s best to start from the [basic](http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/) of React itself. Using React and the modern web development workflow tools require a lot of configuration. Thus, usually we start with a boilerplate code. Two of the [many](https://risingstars2016.js.org/#react-template) React boilerplates are: [Create React App](https://github.com/facebookincubator/create-react-app) and [React Boilerplate](http://reactboilerplate.com/). This project is started using the Create React App boilerplate.
-
-Dipper uses the the [Star Wars API](https://swapi.co) (SWAPI) to generate trivia or random bits of information about the films, people, planets, species, starships, and vehicles of the Star Wars universe. Dipper is deployed on [Netlify](https://www.netlify.com) which is a new service for quickly rolling out static websites. It supports custom domains, SSL, built-in form submissions, API Proxy, etc.
+Dipper uses the the [Star Wars API](https://swapi.co) (SWAPI) to generate trivia or random bits of information about the films, people, planets, species, starships, and vehicles of the Star Wars universe. It has a very simple interface with just one button to generate random Star Wars trivia. The screenshot of the app:
 
 ![Screenshot](https://raw.githubusercontent.com/donny/dipper/master/screenshot.png)
 
 ### Implementation
+
+Dipper is implemented using [React](https://facebook.github.io/react/) which is a JavaScript library for building user interfaces. There are many [tutorials](https://github.com/enaqx/awesome-react) on React, but it’s best to start from the [basic](http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/) of React itself. Using React and the modern web development workflow tools require a lot of configuration. Thus, usually we start with a boilerplate code. Two of the [many](https://risingstars2016.js.org/#react-template) React boilerplates are: [Create React App](https://github.com/facebookincubator/create-react-app) and [React Boilerplate](http://reactboilerplate.com/). This project is started using the Create React App boilerplate.
+
+Dipper is deployed on [Netlify](https://www.netlify.com) which is a new service for quickly rolling out static websites. It supports custom domains, SSL, built-in form submissions, API Proxy, etc. Netlify has GitHub integration that allows us to connect a GitHub repository to a Netlify site. And whenever we push to GitHub, Netlify will run the build command and deploy the result.
+
+SWAPI unfortunately [doesn't support](https://github.com/phalt/swapi/issues/60) CORS. Thus, the API must be proxied through [CORS Anywhere](https://github.com/donny/cors-anywhere) which is a NodeJS reverse proxy which adds CORS headers to the proxied request. The CORS Anywhere app for Dipper is hosted on [Heroku](https://www.heroku.com). Thus, we have a Netlify site (Dipper) that communicates with a Heroku app (CORS Anywhere) to use the Star Wars API (SWAPI).
 
 ### Conclusion
