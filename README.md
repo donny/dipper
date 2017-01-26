@@ -39,7 +39,7 @@ class App extends Component {
 }
 ```
 
-The [Gallery component](https://github.com/donny/dipper/blob/master/Gallery.js) uses the [React Masonry Component](https://github.com/eiriklv/react-masonry-component) to display the trivia cards in Pinterest style column layout. The `render()` call for the Gallery component is displayed below:
+The [Gallery](https://github.com/donny/dipper/blob/master/src/Gallery.js) component uses the [React Masonry Component](https://github.com/eiriklv/react-masonry-component) to display the trivia cards in Pinterest style column layout. The `render()` call for the Gallery component is displayed below:
 
 ```javascript
 render() {
@@ -57,5 +57,7 @@ renderTrivias() {
   return this.state.trivias.map(trivia => this.renderTrivia(trivia));
 }
 ```
+
+The trivia cards are implemented by six components: [Film.js](https://github.com/donny/dipper/blob/master/src/entities/Film.js), [Person.js](https://github.com/donny/dipper/blob/master/src/entities/Person.js), [Planet.js](https://github.com/donny/dipper/blob/master/src/entities/Planet.js), [Species.js](https://github.com/donny/dipper/blob/master/src/entities/Species.js), [Starship.js](https://github.com/donny/dipper/blob/master/src/entities/Starship.js), and [Vehicle.js](https://github.com/donny/dipper/blob/master/src/entities/Vehicle.js)
 
 ### Conclusion
