@@ -22,4 +22,40 @@ Dipper is deployed on [Netlify](https://www.netlify.com) which is a new service 
 
 SWAPI unfortunately [doesn't support](https://github.com/phalt/swapi/issues/60) CORS. Thus, the API must be proxied through [CORS Anywhere](https://github.com/donny/cors-anywhere) which is a NodeJS reverse proxy which adds CORS headers to the proxied request. The CORS Anywhere app for Dipper is hosted on [Heroku](https://www.heroku.com). Thus, we have a Netlify site (Dipper) that communicates with a Heroku app (CORS Anywhere) to use the Star Wars API (SWAPI).
 
+The Dipper app itself is very simple:
+
+```javascript
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+        <Gallery/>
+      </div>
+    );
+  }
+}
+```
+
+The [Gallery component](https://github.com/donny/dipper/blob/master/Gallery.js) uses the [React Masonry Component](https://github.com/eiriklv/react-masonry-component) to display the trivia cards in Pinterest style column layout. The `render()` call for the Gallery component is displayed below:
+
+```javascript
+render() {
+  return (
+    <div className="Gallery">
+      <NewTrivia addNewTrivia={this.addNewTrivia}/>
+      <Masonry>
+        {this.renderTrivias()}
+      </Masonry>
+    </div>
+  );
+}
+
+renderTrivias() {
+  return this.state.trivias.map(trivia => this.renderTrivia(trivia));
+}
+```
+
 ### Conclusion
