@@ -5,7 +5,7 @@ import Remote from '../Remote';
 class Planet extends Component {
   constructor(props) {
     super(props);
-    this.state = { resId: props.resId, fetching: true, data: {} };
+    this.state = { resId: props.resId, fetching: true, error: false, data: {} };
   }
 
   handleClick() {
@@ -19,6 +19,11 @@ class Planet extends Component {
         data: data,
         fetching: false
       });
+    }).catch( (error) => {
+      this.setState({
+        fetching: false,
+        error: true
+      });
     });
   }
 
@@ -28,6 +33,14 @@ class Planet extends Component {
         <div className="Planet">
           <div className="Content-loading">
             <h2>Loading...</h2>
+          </div>
+        </div>
+      );
+    } else if (this.state.error) {
+      return (
+        <div className="Planet">
+          <div className="Content-loading">
+            <h6>Error in retrieving Planet:{this.state.resId}</h6>
           </div>
         </div>
       );

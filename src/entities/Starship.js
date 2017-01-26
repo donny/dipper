@@ -5,7 +5,7 @@ import Remote from '../Remote';
 class Starship extends Component {
   constructor(props) {
     super(props);
-    this.state = { resId: props.resId, fetching: true, data: {} };
+    this.state = { resId: props.resId, fetching: true, error: false, data: {} };
   }
 
   handleClick() {
@@ -19,6 +19,11 @@ class Starship extends Component {
         data: data,
         fetching: false
       });
+    }).catch( (error) => {
+      this.setState({
+        fetching: false,
+        error: true
+      });
     });
   }
 
@@ -28,6 +33,14 @@ class Starship extends Component {
         <div className="Starship">
           <div className="Content-loading">
             <h2>Loading...</h2>
+          </div>
+        </div>
+      );
+    } else if (this.state.error) {
+      return (
+        <div className="Starship">
+          <div className="Content-loading">
+            <h6>Error in retrieving Starship:{this.state.resId}</h6>
           </div>
         </div>
       );
