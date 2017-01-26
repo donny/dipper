@@ -2,4 +2,3 @@
 
 npm run build
 cp _redirects build/
-cp _headers build/

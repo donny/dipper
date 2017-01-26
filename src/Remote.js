@@ -1,4 +1,4 @@
-const address = 'http://fiftytwo-cors-anywhere.herokuapp.com/swapi.co/api'
+const address = '/swapi'
 
 function get(query, cb) {
     return fetch(address + query, {

@@ -12,7 +12,7 @@ import Vehicle from './entities/Vehicle'
 class Gallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { trivias: ["Starship-9-1", "Vehicle-4-2", "Person-3-21", "Planet-1-88", "Species-1-9", "Film-3-11"] };
+    this.state = { trivias: [] };
     this.addNewTrivia = this.addNewTrivia.bind(this);
   }
 
